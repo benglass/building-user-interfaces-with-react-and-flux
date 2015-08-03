@@ -19,6 +19,7 @@
         <style>
         .reveal section img { border: 0; }
         .image-left { float: left; margin: 0 1em 1em 0; }
+        section strong { color: #e7ad52; }
         </style>
 
 		<!-- Code syntax highlighting -->
@@ -129,55 +130,26 @@
                     </section>
 
                     <section>
-                        <h2>Simple Example</h2>
+                        <h2>Example React Component</h2>
                         <div data-height="500" data-theme-id="0" data-slug-hash="xGJMrv" data-default-tab="js" data-user="benglass" class='codepen'></div>
-                    </section>
-                </section>
-
-				<section>
-                    <section>
-                        <h2>Why is Building Interactive UI's Hard?</h2>
-                        <ul>
-                            <li>HTML was designed for documents not user interfaces</li>
-                            <li>Complex user interfaces have a lot of state</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Library vs. Framework</h2>
-                        <p>React helps you create components that know how to take your application state and render it to the DOM. It also provides event handling.</p>
-                        <p>React does not provide: routing, network communication, data modeling, etc. These are outside of the scope of the library. This is why React integrates
-                        well with other frameworks and libraries which handle these concerns.</p>
-                        <p>The benefits of this include smaller file size and a much smaller surface area of the public API which make it simpler to learn.</p>
-                    </section>
-                    <section>
-                        <h2>So React is a Templating Library?</h2>
-                        <p>Not quite. React is more than just a way to render HTML. It is more accurate to compare it to web components or angular directives than a templating library like handlebars.</p>
-                        <p>A React Component, like a web component or a directive, encapsulates data for a view and all logic for rendering that data to the DOM as well as providing event handling.</p>
-                    </section>
-                    <section>
-                        <h2>Simple Example</h2>
-                        <div data-height="450" data-theme-id="0" data-slug-hash="YXjBQq" data-default-tab="js" data-user="benglass" class='codepen'></div>
-                    </section>
-                    <section>
-                        <h2>Same Component Using JSX</h2>
-                        <div data-height="450" data-theme-id="0" data-slug-hash="xGJMrv" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                        <p>What will this component render? What behavior will it exhibit?</p>
                     </section>
                 </section>
 
 				<section>
                     <section>
                         <h2>What is a Component</h2>
-                        <p>A component is a re-usable, composable piece of a user interface.</p>
-                        <p>You can think of a component as a function which takes in application state as its arguments and produces DOM as its output.</p>
-                        <p>Smaller components can be composed together to create user interfaces in the same way you can nest HTML tags.</p>
+                        <p>A component is a <strong>small composable unit</strong> of a user interface.</p>
+                        <p>A component knows how to <strong>transform data into DOM output</strong>.</p>
+                        <p>Smaller components can be composed together to create more complex user interfaces because they <strong>nest like HTML tags</strong>.</p>
                     </section>
                     <section>
                         <h2>Creating a Component</h2>
-                        <p>The least you have to do to create a component is provide a render function.</p>
+                        <p>The least you have to do to create a component is provide a render function. For many components this is all you need.</p>
 <pre><code data-trim>
 class MyComponent extends React.Component {
     render() {
-        return React.DOM.div(attributes, children);
+        return <div id="mydiv">My First Component</div>
     }
 }</code></pre>
                     </section>
@@ -186,17 +158,71 @@ class MyComponent extends React.Component {
 <pre><code data-trim>
 class MyComponent extends React.Component {
     render() {
-        return React.DOM.div({ className: 'myclass' }, [
-            React.DOM.h2({}, 'HELLO!')
-        ]);
+        return (
+            <div className="myclass">
+                <h2>Hello!</h2>
+            </div>
+        )
     }
 }</code></pre>
                     </section>
                     <section>
-                        <h2>Passing Data to Your Component: Props</h2>
+                        <h2>Passing Data & Options to Your Component: Props</h2>
                     </section>
                     <section>
                         <h2>State</h2>
+                    </section>
+                </section>
+
+				<section>
+                    <section>
+                        <h2>Why is Building Interactive<br />UI's Hard?</h2>
+                        <ul class="fragment">
+                            <li>HTML was designed for documents not user interfaces</li>
+                            <li>We now use it to build complex user interfaces</li>
+                            <li>These interfaces are <strong>highly interactive</strong></li>
+                            <li>They have <strong>lots of state</strong> behind them</li>
+                            <li>This state <strong>changes over time</strong></li>
+                            <li>The UI must <strong>react whenever state changes</strong></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>What exactly is state?</h2>
+                        <p class="fragment"><strong>Abstract</strong>: The data required to render a given user interface.</p>
+                        <p class="fragment"><strong>Concrete</strong>: JSON objects.</p>
+
+<pre class="fragment"><code data-trim>
+const state = {
+    comments: [
+        {id: 1, text: 'It was great'},
+        {id: 2, text: 'It was meh'}
+    ],
+    loading: false
+};</code></pre>
+                    </section>
+                    <section>
+                        <h2>How does React help?</h2>
+                        <ul>
+                            <li>Delineate changing state (state) and unchanging state (props)</li>
+                            <li>Encourage limited mutation of state (props, smart vs. dumb components)</li>
+                            <li>Make mutation of state explicit (setState)</li>
+                            <li>Encapsulate how state effects rendering into a single place (render)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Example</h2>
+                        <div data-height="500" data-theme-id="0" data-slug-hash="EjGMwr" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                    </section>
+                </section>
+
+				<section>
+                    <section>
+                        <h2>What is a React Component</h2>
+                        <p>A <strong>composable</strong> user interface element that knows how to transform <strong>application state</strong> into </p>
+                        <ul>
+                            <li>HTML was designed for documents not user interfaces</li>
+                            <li>Complex user interfaces have a lot of state</li>
+                        </ul>
                     </section>
                 </section>
 
