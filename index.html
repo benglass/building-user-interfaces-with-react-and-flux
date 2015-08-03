@@ -45,7 +45,6 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-                    <p>Burlington JS</p>
                     <h2>
                         Building User Interfaces<br />
                         <small>with</small> React & Flux
@@ -54,8 +53,14 @@
 				</section>
 
 				<section>
+                    <h2>Thank You</h2>
+                    <p>Burlington JS</p>
+                    <p>John, Matt, Donnie</p>
+				</section>
+
+				<section>
 					<section>
-                        <h2>About Me</h2>
+                        <h2>Who's this guy?</h2>
                         <h3>
                             Ben Glassman<br />
                             <small>Director of Web Development, <a href="http://vtdesignworks.com">Vermont Design Works</a>*</small>
@@ -63,17 +68,10 @@
                         <p>Full-stack dev and team lead working on custom web applications. *Interested in writing apps in React with ES6? We are hiring!</p>
 					</section>
 					<section>
-                        <h2>Things I Like #1</h2>
+                        <h2>Things I Like</h2>
                         <h3>My Catahoula Leopard Dog Trevor</h3>
                         <p>
                             <img src="img/trevor.jpg" width="400" />
-                        </p>
-                    </section>
-					<section>
-                        <h2>Things I Like #2</h2>
-                        <h3>Hoppy Beer</h2>
-                        <p>
-                            <img src="img/sip-of-sunshine.jpg" width="400" />
                         </p>
                     </section>
 					<section>
@@ -83,30 +81,144 @@
                     </section>
 				</section>
 
-				<!-- Example of nested vertical slides -->
 				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
+                    <h2>Overview</h2>
+                    <h3>
+                        What is React?<br />
+                        What are Components?<br />
+                        What is React Good At?<br />
+                        How is React Designed?<br />
+                        What is JSX?<br />
+                        What is Flux?
+                    </h3>
 				</section>
+
+				<section>
+                    <section>
+                        <h2>What is React?</h2>
+                        <p>A <strong>library</strong> for creating user interfaces<br />with <strong>composable components</strong>.</p>
+                    </section>
+                    <section>
+                        <h2>Library vs. Framework</h2>
+                        <div style="float: left; width: 50%;">
+                            <h2>React does...</h2>
+                            <ul>
+                                <li>Nested/composable views<br />
+                                w/ option handling/defaults<br />
+                                and template rendering<br />
+                                w/ event delegation</li>
+                            </ul>
+                        </div>
+                        <div style="float: left; width: 50%;">
+                            <h2>React doesnt...</h2>
+                            <ul>
+                                <li>HTTP/Network Communication</li>
+                                <li>Validation</li>
+                                <li>Models/Persistence</li>
+                                <li>Routing (react router)</li>
+                                <li>Services</li>
+                                <li>& More</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>So React is a<br />Templating Library?<br /><small>Not really...</small></h2>
+                        <p><strong>Less Like:</strong> Rendering HTML (Handlebars, jade, haml).</p>
+                        <p><strong>More Like:</strong> Re-usable Components w/ configurable behavior (Angular Directives, jQuery UI Widgets, Web Components)</p>
+                    </section>
+
+                    <section>
+                        <h2>Simple Example</h2>
+                        <div data-height="500" data-theme-id="0" data-slug-hash="xGJMrv" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                    </section>
+                </section>
+
+				<section>
+                    <section>
+                        <h2>Why is Building Interactive UI's Hard?</h2>
+                        <ul>
+                            <li>HTML was designed for documents not user interfaces</li>
+                            <li>Complex user interfaces have a lot of state</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Library vs. Framework</h2>
+                        <p>React helps you create components that know how to take your application state and render it to the DOM. It also provides event handling.</p>
+                        <p>React does not provide: routing, network communication, data modeling, etc. These are outside of the scope of the library. This is why React integrates
+                        well with other frameworks and libraries which handle these concerns.</p>
+                        <p>The benefits of this include smaller file size and a much smaller surface area of the public API which make it simpler to learn.</p>
+                    </section>
+                    <section>
+                        <h2>So React is a Templating Library?</h2>
+                        <p>Not quite. React is more than just a way to render HTML. It is more accurate to compare it to web components or angular directives than a templating library like handlebars.</p>
+                        <p>A React Component, like a web component or a directive, encapsulates data for a view and all logic for rendering that data to the DOM as well as providing event handling.</p>
+                    </section>
+                    <section>
+                        <h2>Simple Example</h2>
+                        <div data-height="450" data-theme-id="0" data-slug-hash="YXjBQq" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                    </section>
+                    <section>
+                        <h2>Same Component Using JSX</h2>
+                        <div data-height="450" data-theme-id="0" data-slug-hash="xGJMrv" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                    </section>
+                </section>
+
+				<section>
+                    <section>
+                        <h2>What is a Component</h2>
+                        <p>A component is a re-usable, composable piece of a user interface.</p>
+                        <p>You can think of a component as a function which takes in application state as its arguments and produces DOM as its output.</p>
+                        <p>Smaller components can be composed together to create user interfaces in the same way you can nest HTML tags.</p>
+                    </section>
+                    <section>
+                        <h2>Creating a Component</h2>
+                        <p>The least you have to do to create a component is provide a render function.</p>
+<pre><code data-trim>
+class MyComponent extends React.Component {
+    render() {
+        return React.DOM.div(attributes, children);
+    }
+}</code></pre>
+                    </section>
+                    <section>
+                        <h2>A Real Component</h2>
+<pre><code data-trim>
+class MyComponent extends React.Component {
+    render() {
+        return React.DOM.div({ className: 'myclass' }, [
+            React.DOM.h2({}, 'HELLO!')
+        ]);
+    }
+}</code></pre>
+                    </section>
+                    <section>
+                        <h2>Passing Data to Your Component: Props</h2>
+                    </section>
+                    <section>
+                        <h2>State</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>What is State</h2>
+                        <p>State is a term that gets used a lot when talking about react and just refers to the underlying data that powers your application.</p>
+                        <p>Examples of State for a user interface that shows a list of comments and allows the user to add comments.</p>
+                        <pre><code data-trim>
+var state = {
+    loading: false, // Are the comments loading?
+    comments: [
+        {id: 1, text: 'This is great'},
+        {id: 2, text: 'This is terrible'},
+        {id: 3, text: 'I am undecided'}
+    ],
+    submitting: false, // Is the form submitting?
+    errors: ['Message field is required'] // Errors from the submission of the comment
+}
+                        </code></pre>
+                    </section>
+                </section>
 
 				<section>
 					<h2>Slides</h2>
@@ -434,6 +546,7 @@ Reveal.addEventListener( 'customevent', function() {
 			});
 
 		</script>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 	</body>
 </html>
