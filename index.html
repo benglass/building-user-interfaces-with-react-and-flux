@@ -105,7 +105,7 @@
                             <li>They have <strong>lots of state</strong> behind them</li>
                             <li>This state <strong>changes over time</strong></li>
                             <li>State is <strong>spread out throughout code</strong></li>
-                            <li>State is <strong>can be changed in many places</strong></li>
+                            <li>State can be <strong>changed in many places</strong></li>
                             <li>The UI must <strong>kept up to date when state changes</strong></li>
                             <li>How do <strong>separate UI elements communicate or share state</strong></li>
                         </ul>
@@ -221,6 +221,45 @@ const state = {
 
                 <section>
                     <section>
+                        <h2>State<br /><small>A component's local data</small></h2>
+                        <ul>
+                            <li>Initialized by the component</li>
+                            <li>Can be mutated by a component via setState({ key: 'value' })</li>
+                            <li>Changes trigger a re-render of component and children</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>State Example</h2>
+                        <div data-height="600" data-theme-id="0" data-slug-hash="MwLaRP" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Props vs. State...<br /><small>FIGHT!</small></h2>
+                        <div style="float: left; width: 50%;">
+                            <h3>Props</h3>
+                            <ul>
+                                <li>Passed from parent to child</li>
+                                <li>Immutable by component</li>
+                                <li>Often not serializable (includes callbacks)</li>
+                                <li><strong>Changes trigger re-render</strong></li>
+                            </ul>
+                        </div>
+                        <div style="float: left; width: 50%;">
+                            <h3>State</h3>
+                            <ul>
+                                <li>Initialized by component</li>
+                                <li>Mutated by the component over time</li>
+                                <li>Serializable (simple json object)</li>
+                                <li><strong>Changes trigger re-render</strong></li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
                         <h2>Inside the Render Method<br /><small>The Virtual DOM</small></h2>
                         <ul>
                             <li>A component's render method <strong>does not return a string</strong></li>
@@ -272,79 +311,6 @@ const state = {
                     </section>
                 </section>
 
-				<section>
-                    <section>
-                        <h2>Why is Building Interactive<br />UI's Hard?</h2>
-                        <ul class="fragment">
-                            <li>HTML was designed for documents not user interfaces</li>
-                            <li>We now use it to build complex user interfaces</li>
-                            <li>These interfaces are <strong>highly interactive</strong></li>
-                            <li>They have <strong>lots of state</strong> behind them</li>
-                            <li>This state <strong>changes over time</strong></li>
-                            <li>State is <strong>spread out throughout code</strong></li>
-                            <li>The UI must <strong>update whenever state changes</strong></li>
-                            <li>How do <strong>separate UI elements communicate</strong></li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>What exactly is state?</h2>
-                        <p class="fragment"><strong>Abstract</strong>: The data required to render a given user interface.</p>
-                        <p class="fragment"><strong>Concrete</strong>: JSON objects.</p>
-
-<pre class="fragment"><code data-trim>
-const state = {
-    comments: [
-        {id: 1, text: 'It was great'},
-        {id: 2, text: 'It was meh'}
-    ],
-    loading: false
-};</code></pre>
-                    </section>
-                    <section>
-                        <h2>How does React help?</h2>
-                        <ul>
-                            <li>Delineate changing state (state) and unchanging state (props)</li>
-                            <li>Encourage limited mutation of state (props, smart vs. dumb components)</li>
-                            <li>Make mutation of state explicit (setState)</li>
-                            <li>Encapsulate how state effects rendering into a single place (render)</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Example</h2>
-                        <div data-height="500" data-theme-id="0" data-slug-hash="EjGMwr" data-default-tab="js" data-user="benglass" class='codepen'></div>
-                    </section>
-                </section>
-
-				<section>
-                    <section>
-                        <h2>What is a React Component</h2>
-                        <p>A <strong>composable</strong> user interface element that knows how to transform <strong>application state</strong> into </p>
-                        <ul>
-                            <li>HTML was designed for documents not user interfaces</li>
-                            <li>Complex user interfaces have a lot of state</li>
-                        </ul>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h2>What is State</h2>
-                        <p>State is a term that gets used a lot when talking about react and just refers to the underlying data that powers your application.</p>
-                        <p>Examples of State for a user interface that shows a list of comments and allows the user to add comments.</p>
-                        <pre><code data-trim>
-var state = {
-    loading: false, // Are the comments loading?
-    comments: [
-        {id: 1, text: 'This is great'},
-        {id: 2, text: 'This is terrible'},
-        {id: 3, text: 'I am undecided'}
-    ],
-    submitting: false, // Is the form submitting?
-    errors: ['Message field is required'] // Errors from the submission of the comment
-}
-                        </code></pre>
-                    </section>
-                </section>
 
 				<section>
 					<h2>Slides</h2>
