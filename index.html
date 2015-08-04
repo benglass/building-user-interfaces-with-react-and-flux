@@ -194,8 +194,22 @@ const state = {
                         <p>To render a component, we use React.render to <strong>mount our component to a DOM node</strong></p>
                         <div data-height="500" data-theme-id="0" data-slug-hash="BNvbVZ" data-default-tab="js" data-user="benglass" class='codepen'></div>
                     </section>
+                </section>
+
+                <section>
                     <section>
-                        <h2>Passing Data & Options to Your Component: Props</h2>
+                        <h2>Props<br /><small>Data & Options for Components</small></h2>
+                        <ul>
+                            <li>Options or data needed by the component to render</li>
+                            <li>Like jQuery plugin options</li>
+                            <li>Immutable by convention</li>
+                            <li>Defaults & Validation included</li>
+                            <li>Syntax like HTML attributes</li>
+                        </ul>
+                        <pre><code data-trim class="xml">&lt;MyComponent propname="value" &gt;</code></pre>
+                    </section>
+                    <section>
+                        <h2>Props Example:</h2>
                         <div data-height="500" data-theme-id="0" data-slug-hash="rVoRKo" data-default-tab="js" data-user="benglass" class='codepen'></div>
                     </section>
                     <section>
@@ -606,11 +620,8 @@ Reveal.addEventListener( 'customevent', function() {
 				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
 				]
 			});
 
