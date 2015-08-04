@@ -85,12 +85,12 @@
 				<section>
                     <h2>Overview</h2>
                     <h3>
-                        What is UI Hard?<br />
+                        Why is UI Hard?<br />
                         What is React?<br />
                         What are Components?<br />
-                        What is React Good At?<br />
-                        How is React Designed?<br />
-                        What is JSX?<br />
+                        Event Delegation<br />
+                        Props & State<br />
+                        JSX<br />
                         What is Flux?
                     </h3>
 				</section>
@@ -186,12 +186,12 @@ const state = {
                     </section>
                     <section>
                         <h2>Creating a Component</h2>
-                        <p>The least you have to do to create a component is provide a render function. For many components this is all you need.</p>
+                        <p><em>"If your gonna make a component,<br />you gotta have a render in the class."</em><br />For many components this is all you need.</p>
                         <div data-height="300" data-theme-id="0" data-slug-hash="XboGqO" data-default-tab="js" data-user="benglass" class='codepen'></div>
                     </section>
                     <section>
                         <h2>Rendering your Component</h2>
-                        <p>To render a component, we use React.render to <strong>mount our component to a DOM node</strong></p>
+                        <p>To render a component, we use React.render to<br /><strong>mount our component to a DOM node</strong></p>
                         <div data-height="500" data-theme-id="0" data-slug-hash="BNvbVZ" data-default-tab="js" data-user="benglass" class='codepen'></div>
                     </section>
                 </section>
@@ -252,7 +252,7 @@ const state = {
                     </section>
                     <section>
                         <h2>State Example</h2>
-                        <div data-height="600" data-theme-id="0" data-slug-hash="MwLaRP" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                        <div data-height="650" data-theme-id="0" data-slug-hash="rVPxOg" data-default-tab="js" data-user="benglass" class='codepen'></div>
                     </section>
                 </section>
 
@@ -307,6 +307,7 @@ const state = {
                 type: function Comment,
                 props: {
                     text: 'Hello'
+                    children: []
                 }
             }
         ]
