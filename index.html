@@ -435,6 +435,13 @@ const state = {
                     </section>
 				</section>
 
+                <section>
+                    <section>
+                        <h2>Simple Flux App Example</h2>
+                        <p><a href="http://jsbin.com/lepibi/edit?js,console,output" target="_blank">JSBin</a></p>
+                    </section>
+				</section>
+
 				<section>
                     <section>
                         <h2>What about AJAX/Async?<br /><small>Depends on the implementation</small></h2>
@@ -444,6 +451,63 @@ const state = {
                             <li>In an <strong>action creator</strong> for an async action, you would trigger an ajax request and then dispatch the AddCommentComplete or AddCommentFailed actions
                             depending on the result of the request</li>
                         </ol>
+                    </section>
+                    <section>
+                        <h2>Example Async Action w/ Completed/Failed</h2>
+                        <pre><code data-trim class="javascript">
+const commentApi = {
+  addComment({ newComment }) {
+    return new Promise(function(resolve, reject) {
+        if (newComment.text && newComment.author) {
+          resolve({ newComment: newComment });  
+        } else {
+          reject({ newComment: newComment, errors: ['Please enter text and an author']});  
+        }
+    });
+  }
+};
+
+commentActions.addComment.listen(function(newComment) {
+  commentApi.addComment(newComment)
+    .then(commentActions.addCommentCompleted)
+    .catch(commentActions.addCommentFailed);
+});
+</pre></code>
+                    </section>
+                    <section>
+                        <h2>Async Store Example</h2>
+                        <pre><code data-trim class="javascript">
+const commentStore = {
+    data: { errors: [], loading: false, comments: [] },
+    init() {
+        commentActions.addComment.listen(this.addComment);
+        commentActions.addCommentCompleted.listen(this.addComment);
+        commentActions.addCommentFailed.listen(this.addComment);
+    },
+    addComment() {
+        this.data.loading = true;
+        this.trigger(this.data);
+    },
+    addCommentCompleted({newComment}) {
+        this.data.comments = this.data.comments.concat([newComment]);
+        this.data.loading = false;
+        this.data.errors = [];
+        this.trigger(this.data);
+    },
+    addCommentCompleted({newComment, errors}) {
+        this.data.loading = false;
+        this.data.errors = errors;
+        this.trigger(this.data);
+    }
+};
+</pre></code>
+                    </section>
+				</section>
+
+                <section>
+                    <section>
+                        <h2>Flux App Example w/ ASYNC/AJAX action</h2>
+                        <p><a href="http://jsbin.com/lawawi/edit?js,console,output" target="_blank">JSBin</a></p>
                     </section>
 				</section>
 
