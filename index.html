@@ -318,7 +318,7 @@ const state = {
                         <h2>Virtual DOM</h2>
                         <ul>
                             <li>This tree structure is called the <strong>Virtual DOM</strong>.</li>
-                            <li>React remembers the virtual dom from the last time a component's last render()</li>
+                            <li>React remembers the virtual dom from component's last render()</li>
                             <li>Whenever props/state changes, recursively call render</li>
                             <li>Compare the new virtual dom to the old for each component</li>
                             <li>Make a batch update at the end of the required DOM changes</li>
@@ -329,8 +329,9 @@ const state = {
                         <ul>
                             <li>No manual DOM manipulation</li>
                             <li>Minimizes changes to the DOM</li>
-                            <li>Easier to reason about what the HTML output will be. Just look at render().</li>
-                            <li>Components are guaranteed to update whenever props or state change</li>
+                            <li>Easier to reason about what the HTML output will be (Just look at render).</li>
+                            <li>Components are guaranteed to update whenever props or state change (no dirty tracking)</li>
+                            <li>Support for multiple render targets (DOM, Reactive Native, ??)</li>
                         </ul>
                     </section>
                 </section>
