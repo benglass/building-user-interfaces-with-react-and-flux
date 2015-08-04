@@ -64,9 +64,13 @@
                         <h2>Who's this guy?</h2>
                         <h3>
                             Ben Glassman<br />
-                            <small>Director of Web Development, <a href="http://vtdesignworks.com">Vermont Design Works</a>*</small>
+                            <small>Senior Developer, <a href="http://vtdesignworks.com">Vermont Design Works</a>*<br />
+                            Adjunct Professor, <a href="http://champlain.edu">Champlain College</a><br />
+                            Beer Geek, <a href="http://www.winooskivt.org/">City of Winooski</a></small>
                         </h3>
-                        <p>Full-stack dev and team lead working on custom web applications. *Interested in writing apps in React with ES6? We are hiring!</p>
+                        <p>Full-stack dev and team lead working on custom web applications.<br />
+                        Part-time zymurgist, full-time dog parent<br />
+                        *Interested in writing apps in React with ES6? We are hiring!</p>
 					</section>
 					<section>
                         <h2>Things I Like</h2>
@@ -77,7 +81,7 @@
                     </section>
 					<section>
                         <h2>Not My Favorite Thing</h2>
-                        <h3>Legacy Code<br /><small>(a.k.a. Anything I wrote before last week)</small></h3>
+                        <h3>Legacy Code<br /><small>(a.k.a. The stuff I wrote yesterday)</small></h3>
                         <p><img src="img/ifception.jpg" /></p>
                     </section>
 				</section>
@@ -85,26 +89,27 @@
 				<section>
                     <h2>Overview</h2>
                     <h3>
-                        Why is UI Hard?<br />
+                        Why is UI Programming Hard?<br />
                         What is React?<br />
-                        What are Components?<br />
+                        Components<br />
                         Event Delegation<br />
                         Props & State<br />
                         JSX<br />
-                        What is Flux?
+                        App Example<br />
+                        Flux
                     </h3>
 				</section>
 
 				<section>
                     <section>
-                        <h2>Why is Building Interactive<br />UI's Hard?</h2>
+                        <h2>Why is Programming Interactive UI's Hard?</h2>
                         <ul class="fragment">
                             <li>HTML was designed for documents not user interfaces</li>
                             <li>We now use it to build complex user interfaces</li>
                             <li>These interfaces are <strong>highly interactive</strong></li>
                             <li>They have <strong>lots of state</strong> behind them</li>
                             <li>This state <strong>changes over time</strong></li>
-                            <li>State is <strong>spread out throughout code</strong></li>
+                            <li>State is <strong>spread out throughout the code</strong></li>
                             <li>State can be <strong>changed in many places</strong></li>
                             <li>The UI must <strong>kept up to date when state changes</strong></li>
                             <li>How do <strong>separate UI elements communicate or share state</strong></li>
@@ -127,7 +132,7 @@ const state = {
                     <section>
                         <h2>How does React help?</h2>
                         <ul>
-                            <li>Delineate changing state (state) and unchanging state (props)</li>
+                            <li>Clear separation of mutable (state) and immutable (props) state</li>
                             <li>Encourage limited mutation of state (props, smart/container vs. dumb components)</li>
                             <li>Make mutation of state explicit (setState)</li>
                             <li>Encapsulate how state effects rendering into a single place (render)</li>
@@ -139,27 +144,29 @@ const state = {
                     <section>
                         <h2>What is React?</h2>
                         <p>A <strong>library</strong> for creating user interfaces<br />with <strong>composable components</strong>.</p>
+                        <p><small>Used by Facebook, Instagram, Netflix, Yahoo!, Khan Academy, Codecademy.</small></p>
                     </section>
                     <section>
                         <h2>Library vs. Framework</h2>
                         <div style="float: left; width: 50%;">
-                            <h2>React does...</h2>
+                            <h3>React does...</h3>
                             <ul>
                                 <li>Declarative nestable views<br />
                                 w/ option handling/defaults<br />
                                 and template rendering<br />
                                 w/ event delegation</li>
+                                <li>Very little else!</li>
                             </ul>
                         </div>
                         <div style="float: left; width: 50%;">
-                            <h2>React doesnt...</h2>
+                            <h3>React doesnt...</h3>
                             <ul>
                                 <li>HTTP/Network Communication</li>
                                 <li>Validation</li>
                                 <li>Models/Persistence</li>
                                 <li>Routing (react router)</li>
                                 <li>Services</li>
-                                <li>& More</li>
+                                <li>So much more!</li>
                             </ul>
                         </div>
                     </section>
@@ -181,8 +188,9 @@ const state = {
                     <section>
                         <h2>What is a Component</h2>
                         <p>A component is a <strong>small composable unit</strong> of a user interface.</p>
-                        <p>A component knows how to <strong>transform data into DOM output</strong>.</p>
+                        <p>A component knows how to <strong>transform state into DOM output</strong>.</p>
                         <p>Smaller components can be composed together to create more complex user interfaces because they <strong>nest like HTML tags</strong>.</p>
+                        <p><strong>Kinda Like:</strong> Angular directives, jQuery UI Widgets, Web Components</p>
                     </section>
                     <section>
                         <h2>Creating a Component</h2>
@@ -227,14 +235,17 @@ const state = {
                     </section>
                     <section>
                         <h2>Props Example:</h2>
-                        <div data-height="500" data-theme-id="0" data-slug-hash="rVoRKo" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                        <div style="float: left; width: 50%;">
+                            <h3>String Values</h3>
+                            <div data-height="500" data-theme-id="0" data-slug-hash="rVoRKo" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                        </div>
+                        <div style="float: left; width: 50%;">
+                            <h3>JS Values</h3>
+                            <div data-height="500" data-theme-id="0" data-slug-hash="zGevVQ" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                        </div>
                     </section>
                     <section>
-                        <h2>Props Example (JS values)</h2>
-                        <div data-height="500" data-theme-id="0" data-slug-hash="zGevVQ" data-default-tab="js" data-user="benglass" class='codepen'></div>
-                    </section>
-                    <section>
-                        <h2>Option Validation (propTypes) and defaults (defaultProps)</h2>
+                        <h2>Validation & Defaults<br /><small>or: bye bye "unable to call foo of undefined"</small></h2>
                         <div data-height="550" data-theme-id="0" data-slug-hash="mJaojr" data-default-tab="js" data-user="benglass" class='codepen'></div>
                     </section>
                 </section>
@@ -364,6 +375,14 @@ const state = {
                         </ul>
                     </section>
 				</section>
+
+                <section>
+                    <section>
+                        <h2>More Complex Example</h2>
+                        <p><a href="http://jsbin.com/lucuru/8/edit?html,js,console,output" target="_blank">JSBin</a></p>
+                    </section>
+				</section>
+
 
 			</div>
 
