@@ -172,7 +172,7 @@ const state = {
 
                     <section>
                         <h2>Example React Component</h2>
-                        <div data-height="500" data-theme-id="0" data-slug-hash="xGJMrv" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                        <div data-height="550" data-theme-id="0" data-slug-hash="xGJMrv" data-default-tab="js" data-user="benglass" class='codepen'></div>
                         <p>What will this component render? What behavior will it exhibit?</p>
                     </section>
                 </section>
@@ -581,9 +581,11 @@ Reveal.addEventListener( 'customevent', function() {
 		</div>
 
         <script>
-            document.querySelectorAll('.codepen').forEach(function(el) {
+            var codepenEmbeds = document.querySelectorAll('.codepen');
+            for (var i = 0; i < codepenEmbeds.length; i++) {
+                var el = codepenEmbeds[i];
                 el.style.height = el.getAttribute('data-height') + 'px';
-            });
+            }
         </script>
         <script src="http://assets.codepen.io/assets/embed/ei.js"></script>
 		<script src="lib/js/head.min.js"></script>
