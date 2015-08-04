@@ -230,6 +230,7 @@ const state = {
                             <li>Immutable by convention</li>
                             <li>Defaults & Validation included</li>
                             <li>Syntax like HTML attributes</li>
+                            <li>Changes trigger a re-render of component and children</li>
                         </ul>
                         <pre><code data-trim class="xml">&lt;MyComponent propname="value" &gt;</code></pre>
                     </section>
@@ -257,7 +258,8 @@ const state = {
                             <li>Javascript Object</li>
                             <li>Accessed via this.state</li>
                             <li>Initialized in the component's constructor</li>
-                            <li>Can be mutated by a component via setState({ key: 'value' })</li>
+                            <li>Private to the component</li>
+                            <li>Can be mutated by the component via this.setState({ key: 'value' })</li>
                             <li>Changes trigger a re-render of component and children</li>
                         </ul>
                     </section>
@@ -298,7 +300,7 @@ const state = {
                         <h2>Inside the Render Method<br /><small>The Virtual DOM</small></h2>
                         <ul>
                             <li>A component's render method <strong>does not return a string</strong></li>
-                            <li>The return value is a <strong>javascript object the describes the tree of components to render</strong>.</p>
+                            <li>The return value is a <strong>javascript object the describes the tree of nested components to render</strong>.</p>
                         </ul>
                     </section>
                     <section>
