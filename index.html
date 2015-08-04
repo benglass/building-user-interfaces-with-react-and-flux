@@ -580,6 +580,12 @@ Reveal.addEventListener( 'customevent', function() {
 
 		</div>
 
+        <script>
+            document.querySelectorAll('.codepen').forEach(function(el) {
+                el.style.height = el.getAttribute('data-height') + 'px';
+            });
+        </script>
+        <script src="http://assets.codepen.io/assets/embed/ei.js"></script>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
@@ -607,7 +613,6 @@ Reveal.addEventListener( 'customevent', function() {
 			});
 
 		</script>
-        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 	</body>
 </html>
