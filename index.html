@@ -196,11 +196,27 @@ const state = {
                     </section>
                 </section>
 
+				<section>
+                    <section>
+                        <h2>Event Delegation</h2>
+                        <ul>
+                            <li>Provided by default by React components</li>
+                            <li>Syntax looks like inline event handlers (delegation under the hood)</li>
+                            <li>No automatic context/binding (ES6/future)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Event Example</h2>
+                        <div data-height="500" data-theme-id="0" data-slug-hash="ZGwbNV" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                    </section>
+                </section>
 
                 <section>
                     <section>
                         <h2>Props<br /><small>Data & Options for Components</small></h2>
                         <ul>
+                            <li>Javascript Object</li>
+                            <li>Accessed via this.props</li>
                             <li>Options or data needed by the component to render</li>
                             <li>Like jQuery plugin options</li>
                             <li>Immutable by convention</li>
@@ -214,6 +230,10 @@ const state = {
                         <div data-height="500" data-theme-id="0" data-slug-hash="rVoRKo" data-default-tab="js" data-user="benglass" class='codepen'></div>
                     </section>
                     <section>
+                        <h2>Props Example (JS values)</h2>
+                        <div data-height="500" data-theme-id="0" data-slug-hash="zGevVQ" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                    </section>
+                    <section>
                         <h2>Option Validation (propTypes) and defaults (defaultProps)</h2>
                         <div data-height="550" data-theme-id="0" data-slug-hash="mJaojr" data-default-tab="js" data-user="benglass" class='codepen'></div>
                     </section>
@@ -223,7 +243,9 @@ const state = {
                     <section>
                         <h2>State<br /><small>A component's local data</small></h2>
                         <ul>
-                            <li>Initialized by the component</li>
+                            <li>Javascript Object</li>
+                            <li>Accessed via this.state</li>
+                            <li>Initialized in the component's constructor</li>
                             <li>Can be mutated by a component via setState({ key: 'value' })</li>
                             <li>Changes trigger a re-render of component and children</li>
                         </ul>
@@ -240,19 +262,21 @@ const state = {
                         <div style="float: left; width: 50%;">
                             <h3>Props</h3>
                             <ul>
+                                <li><strong>Javascript Object</strong></li>
+                                <li><strong>Changes trigger re-render</strong></li>
                                 <li>Passed from parent to child</li>
                                 <li>Immutable by component</li>
                                 <li>Often not serializable (includes callbacks)</li>
-                                <li><strong>Changes trigger re-render</strong></li>
                             </ul>
                         </div>
                         <div style="float: left; width: 50%;">
                             <h3>State</h3>
                             <ul>
+                                <li><strong>Javascript Object</strong></li>
+                                <li><strong>Changes trigger re-render</strong></li>
                                 <li>Initialized by component</li>
                                 <li>Mutated by the component over time</li>
                                 <li>Serializable (simple json object)</li>
-                                <li><strong>Changes trigger re-render</strong></li>
                             </ul>
                         </div>
                     </section>
