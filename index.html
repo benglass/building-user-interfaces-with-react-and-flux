@@ -17,6 +17,11 @@
 		<link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/night.css" id="theme">
         <style>
+        .reveal h1 { font-size: 2.4em; }
+        .reveal h2 { font-size: 2.0em; }
+        .reveal h3 { font-size: 1.25em; }
+
+        .slides { margin: 0 auto; }
         .reveal section img { border: 0; }
         .image-left { float: left; margin: 0 1em 1em 0; }
         section strong { color: #e7ad52; }
@@ -96,7 +101,7 @@
                         Props & State<br />
                         JSX<br />
                         App Example<br />
-                        Flux
+                        What is Flux?
                     </h3>
 				</section>
 
@@ -380,11 +385,54 @@ const state = {
 
                 <section>
                     <section>
-                        <h2>More Complex Example</h2>
-                        <p><a href="http://jsbin.com/lucuru/8/edit?html,js,console,output" target="_blank">JSBin</a></p>
+                        <h2>Simple Web App Example</h2>
+                        <p><a href="http://jsbin.com/lucuru/11/edit?html,js,console,output" target="_blank">JSBin</a></p>
                     </section>
 				</section>
 
+                <section>
+                    <section>
+                        <h2>Flux<br /><small>An Application Architecture for React</small></h2>
+                        <ul>
+                            <li>Design Pattern for managing changing/shared state</li>
+                            <li>Provides a uni-directional data flow dictating how state changes should be triggered and propagated throughout the UI</li>
+                            <li>Defines an application layer where state is stored and changed that lives outside of components</li>
+                        </ul>
+                        <p><small>There are many Flux implementations out there: <a href="http://alt.js.org/">Alt</a>, <a href="https://github.com/reflux/refluxjs">Reflux</a>, <a href="https://github.com/yahoo/fluxible">Fluxible</a>, <a href="https://github.com/gaearon/redux">Redux</a>, <a href="https://github.com/kenwheeler/mcfly">McFly</a>, <a href="https://github.com/deloreanjs/delorean">Delorean</a>, <a href="https://github.com/omcljs/om">Om (ClojureScript)</a> ... all with pun-y names</small></p>
+                    </section>
+                    <section>
+                        <h2>Flux Lifecycle in an Oversimplified Nutshell</h2>
+                        <ol class="fragment">
+                            <li>The user fills out a comment form and clicks the submit button</li>
+                            <li class="fragment">The CommentForm component triggers an AddComment event with data (text, author)</li>
+                            <li class="fragment">The application layer responsible for handling state changes (stores) receives the event and updates its data</li>
+                            <li class="fragment">The store emits a change event with the new data</li>
+                            <li class="fragment">Any components listening to that store receive the new data and can update themselves (setState/passing new props to children).</p>
+                        </ol>
+                    </section>
+                    <section>
+                        <h2>Using Flux Language</h2>
+                        <ol class="fragment">
+                            <li>The user fills out a comment form and clicks the submit button</li>
+                            <li class="fragment">The <strong>CommentForm component</strong> triggers an <strong>AddComment action</strong> with data (text, author)</li>
+                            <li class="fragment">The <strong>CommentStore</strong> receives the <strong>AddComment action</strong> and updates its <strong>state</strong> (adds the comment to a list)</li>
+                            <li class="fragment">The <strong>CommentStore emits a change event</strong> with the new <strong>state</strong> (new comment list)</li>
+                            <li class="fragment">The <strong>CommentList component</strong> listening to the <strong>CommentStore</strong> receive the new <strong>state</strong> (comment list) and can update itself (setState/passing new props to children).</p>
+                        </ol>
+                    </section>
+                    <section>
+                        <h2>Try it again with flow charts</h2>
+                        <a href="img/Flux Flow.png" target="_blank"><img src="img/Flux Flow.png" style="background: #fff;" width="400" /></a>
+                    </section>
+                    <section>
+                        <h2>Flux Glossary</h2>
+                        <ul>
+                            <li><strong>Components</strong>: React Components which trigger Actions based on user input (clicks). They pull their data from and listen to changes in Stores.</li>
+                            <li><strong>Actions</strong>: Events that needs to trigger a state change (e.g. AddComment, DeleteComment, LikeComment) and carry a data payload from Components to the Stores</li>
+                            <li><strong>Stores</strong>: Objects responsible for storing and updating application state (list of comments, ids of comments a user likes) by listening to Actions and emitting change events to the Components</li>
+                        </ul>
+                    </section>
+				</section>
 
 			</div>
 
