@@ -101,7 +101,8 @@
                         Props & State<br />
                         JSX<br />
                         App Example<br />
-                        What is Flux?
+                        What is Flux?<br />
+                        Async with Flux
                     </h3>
 				</section>
 
@@ -429,8 +430,20 @@ const state = {
                         <ul>
                             <li><strong>Components</strong>: React Components which trigger Actions based on user input (clicks). They pull their data from and listen to changes in Stores.</li>
                             <li><strong>Actions</strong>: Events that needs to trigger a state change (e.g. AddComment, DeleteComment, LikeComment) and carry a data payload from Components to the Stores</li>
-                            <li><strong>Stores</strong>: Objects responsible for storing and updating application state (list of comments, ids of comments a user likes) by listening to Actions and emitting change events to the Components</li>
+                            <li><strong>Stores</strong>: Where application state lives. Stores are responsible for keeping application state (the list of comments, ids of comments a user likes) updated by listening to Actions and notifying components of changes by emitting change events</li>
                         </ul>
+                    </section>
+				</section>
+
+				<section>
+                    <section>
+                        <h2>What about AJAX/Async?<br /><small>Depends on the implementation</small></h2>
+                        <ol>
+                            <li>Async actions which can fail or succeed are generally handled as separate actions: AddComment, AddCommentComplete & AddCommentFailed</li>
+                            <li>The <strong>action creator</strong> is the name used for a function which a component can call to dispatch an action.</li>
+                            <li>In an <strong>action creator</strong> for an async action, you would trigger an ajax request and then dispatch the AddCommentComplete or AddCommentFailed actions
+                            depending on the result of the request</li>
+                        </ol>
                     </section>
 				</section>
 
