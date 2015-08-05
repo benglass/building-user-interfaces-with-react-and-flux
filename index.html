@@ -394,22 +394,22 @@ const state = {
 
                 <section>
                     <section>
-                        <h2>Flux<br /><small>An Architecture for managing State in React Components</small></h2>
+                        <h2>Flux<br /><small>An Application Architecture for managing State in React</small></h2>
                         <ul>
-                            <li>Design Pattern for managing changing/shared state</li>
-                            <li>Provides a uni-directional data flow dictating how state changes should be triggered and propagated throughout the UI</li>
+                            <li>Design Pattern* for managing changing/shared state</li>
+                            <li>Advocates for a uni-directional data flow to trigger state changes and propagate state updates to components</li>
                             <li>Defines an application layer where state is stored and changed that lives outside of components</li>
                         </ul>
-                        <p><small>There are many Flux implementations out there: <a href="http://alt.js.org/">Alt</a>, <a href="https://github.com/reflux/refluxjs">Reflux</a>, <a href="https://github.com/yahoo/fluxible">Fluxible</a>, <a href="https://github.com/gaearon/redux">Redux</a>, <a href="https://github.com/kenwheeler/mcfly">McFly</a>, <a href="https://github.com/deloreanjs/delorean">Delorean</a>, <a href="https://github.com/omcljs/om">Om (ClojureScript)</a> ... all with pun-y names</small></p>
+                        <p><small>*There are many Flux implementations out there: <a href="http://alt.js.org/">Alt</a>, <a href="https://github.com/reflux/refluxjs">Reflux</a>, <a href="https://github.com/yahoo/fluxible">Fluxible</a>, <a href="https://github.com/gaearon/redux">Redux</a>, <a href="https://github.com/kenwheeler/mcfly">McFly</a>, <a href="https://github.com/deloreanjs/delorean">Delorean</a>, <a href="https://github.com/omcljs/om">Om (ClojureScript)</a> ... seemingly all with pun-y names</small></p>
                     </section>
                     <section>
                         <h2>Flux Lifecycle in an Oversimplified Nutshell</h2>
                         <ol class="fragment">
                             <li>The user fills out a comment form and clicks the submit button</li>
-                            <li class="fragment">The CommentForm component triggers an AddComment event with data (text, author)</li>
-                            <li class="fragment">The application layer responsible for handling state changes (stores) receives the event and updates its data</li>
-                            <li class="fragment">The store emits a change event with the new data</li>
-                            <li class="fragment">Any components listening to that store receive the new data and can update themselves (setState/passing new props to children).</p>
+                            <li class="fragment">The form component triggers an AddComment event with data (text, author)</li>
+                            <li class="fragment">The application layer responsible for handling state changes receives the event and updates its data</li>
+                            <li class="fragment">... and emits a change event with the new data</li>
+                            <li class="fragment">The comment list component can listen for the change event and re-render itself/child components via setState</li>
                         </ol>
                     </section>
                     <section>
