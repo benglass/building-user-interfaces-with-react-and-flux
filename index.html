@@ -418,8 +418,8 @@ const state = {
                             <li>The user fills out a comment form and clicks the submit button</li>
                             <li class="fragment">The <strong>CommentForm component</strong> triggers an <strong>AddComment action</strong> with data (text, author)</li>
                             <li class="fragment">The <strong>CommentStore</strong> receives the <strong>AddComment action</strong> and updates its <strong>state</strong> (adds the comment to a list)</li>
-                            <li class="fragment">The <strong>CommentStore emits a change event</strong> with the new <strong>state</strong> (new comment list)</li>
-                            <li class="fragment">The <strong>CommentList component</strong> listening to the <strong>CommentStore</strong> receive the new <strong>state</strong> (comment list) and can update itself (setState/passing new props to children).</p>
+                            <li class="fragment">... and <strong>emits a change event</strong> with the new <strong>state</strong> (new comment list)</li>
+                            <li class="fragment">The <strong>CommentList component</strong> listening to the <strong>CommentStore</strong> receives the new <strong>state</strong> (comment list) and can re-render itself/child components via setState</p>
                         </ol>
                     </section>
                     <section>
