@@ -74,8 +74,8 @@
                             Beer Geek, <a href="http://www.winooskivt.org/">City of Winooski</a></small>
                         </h3>
                         <p>Full-stack dev and team lead working on custom web applications.<br />
-                        Part-time zymurgist, full-time dog parent<br />
-                        *Interested in writing apps in React with ES6? We are hiring!</p>
+                        Part-time zymurgist, full-time dog parent</p>
+                        <p><small>*Interested in writing apps in React with ES6?<br />We are hiring front-end and back-end devs!</small></p>
 					</section>
 					<section>
                         <h2>Things I Like</h2>
@@ -97,8 +97,8 @@
                         Why is UI Programming Hard?<br />
                         What is React?<br />
                         Components<br />
-                        Event Delegation<br />
                         Props & State<br />
+                        Event Delegation<br />
                         JSX<br />
                         App Example<br />
                         What is Flux?<br />
@@ -135,15 +135,6 @@ const state = {
     loading: false
 };</code></pre>
                     </section>
-                    <section>
-                        <h2>How does React help?</h2>
-                        <ul>
-                            <li>Clear separation of mutable (state) and immutable (props) state</li>
-                            <li>Encourage limited mutation of state (props, smart/container vs. dumb components)</li>
-                            <li>Make mutation of state explicit (setState)</li>
-                            <li>Encapsulate how state effects rendering into a single place (render)</li>
-                        </ul>
-                    </section>
                 </section>
 
 				<section>
@@ -151,6 +142,16 @@ const state = {
                         <h2>What is React?</h2>
                         <p>A <strong>library</strong> for creating user interfaces<br />with <strong>composable components</strong>.</p>
                         <p><small>Used by Facebook, Instagram, Netflix, Yahoo!, Khan Academy, Codecademy.</small></p>
+                    </section>
+                    <section>
+                        <h2>How does React help?</h2>
+                        <ul>
+                            <li>Clear separation of mutable (state) and immutable (props) state</li>
+                            <li>Encourages limited mutation of state (props, smart/container vs. dumb components)</li>
+                            <li>Makes mutation of state explicit (setState)</li>
+                            <li>Encapsulates how state effects rendering into a single place (render)</li>
+                            <li>Reduces the need for manual DOM manipulation</li>
+                        </ul>
                     </section>
                     <section>
                         <h2>Library vs. Framework</h2>
@@ -194,7 +195,7 @@ const state = {
                     <section>
                         <h2>What is a Component</h2>
                         <p>A component is a <strong>small composable unit</strong> of a user interface.</p>
-                        <p>A component knows how to <strong>transform state into DOM output</strong>.</p>
+                        <p>A component knows how to <strong>output DOM based on state</strong>.</p>
                         <p>Smaller components can be composed together to create more complex user interfaces because they <strong>nest like HTML tags</strong>.</p>
                         <p><strong>Kinda Like:</strong> Angular directives, jQuery UI Widgets, Web Components</p>
                     </section>
@@ -207,21 +208,6 @@ const state = {
                         <h2>Rendering your Component</h2>
                         <p>To render a component, we use React.render to<br /><strong>mount our component to a DOM node</strong></p>
                         <div data-height="500" data-theme-id="0" data-slug-hash="BNvbVZ" data-default-tab="js" data-user="benglass" class='codepen'></div>
-                    </section>
-                </section>
-
-				<section>
-                    <section>
-                        <h2>Event Delegation</h2>
-                        <ul>
-                            <li>Provided by default by React components</li>
-                            <li>Syntax looks like inline event handlers (delegation under the hood)</li>
-                            <li>No automatic context/binding (ES6/future)</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Event Example</h2>
-                        <div data-height="500" data-theme-id="0" data-slug-hash="ZGwbNV" data-default-tab="js" data-user="benglass" class='codepen'></div>
                     </section>
                 </section>
 
@@ -252,8 +238,23 @@ const state = {
                         </div>
                     </section>
                     <section>
-                        <h2>Validation & Defaults<br /><small>or: bye bye "unable to call foo of undefined"</small></h2>
+                        <h2>Validation & Defaults</h2>
                         <div data-height="550" data-theme-id="0" data-slug-hash="mJaojr" data-default-tab="js" data-user="benglass" class='codepen'></div>
+                    </section>
+                </section>
+
+				<section>
+                    <section>
+                        <h2>Event Delegation</h2>
+                        <ul>
+                            <li>Syntax looks like inline event handlers but uses delegation under the hood</li>
+                            <li>No automatic context/binding (ES6)</li>
+                        </ul>
+                        <pre><code data-trim class="html">&lt;button onClick={this.handleClick.bind(this)}&gt;GO!&lt;/button&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h2>Event Example</h2>
+                        <div data-height="500" data-theme-id="0" data-slug-hash="ZGwbNV" data-default-tab="js" data-user="benglass" class='codepen'></div>
                     </section>
                 </section>
 
@@ -265,7 +266,7 @@ const state = {
                             <li>Accessed via this.state</li>
                             <li>Initialized in the component's constructor</li>
                             <li>Private to the component</li>
-                            <li>Can be mutated by the component via this.setState({ key: 'value' })</li>
+                            <li>Can be mutated by component via this.setState({ key: 'value' })</li>
                             <li>Changes trigger a re-render of component and children</li>
                         </ul>
                     </section>
@@ -393,7 +394,7 @@ const state = {
 
                 <section>
                     <section>
-                        <h2>Flux<br /><small>An Application Architecture for React</small></h2>
+                        <h2>Flux<br /><small>An Architecture for managing State in React Components</small></h2>
                         <ul>
                             <li>Design Pattern for managing changing/shared state</li>
                             <li>Provides a uni-directional data flow dictating how state changes should be triggered and propagated throughout the UI</li>
