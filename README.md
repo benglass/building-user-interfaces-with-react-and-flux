@@ -1,3 +1,3 @@
 # Building User Interfaces with React and Flux
 
-A presentation by Ben Glassman for BurlingtonJS
+http://benglass.github.io/es6-the-future-is-now
